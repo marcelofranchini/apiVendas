@@ -1,13 +1,13 @@
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
-export class CreateProducts1615167813892 implements MigrationInterface {
+export class CreateUsers1615485845101 implements MigrationInterface {
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
             new Table({
-                name: 'products',
+                name: "users",
                 columns: [
                     {
-                        name: 'id',
+                        name: 'user',
                         type: 'uuid',
                         isPrimary: true,
                         generationStrategy: 'uuid',
@@ -15,17 +15,21 @@ export class CreateProducts1615167813892 implements MigrationInterface {
                     },
                     {
                         name: 'name',
+                        type: 'varchar'
+                    },
+                    {
+                        name: 'email',
                         type: 'varchar',
+                        isUnique: true,
                     },
                     {
-                        name: 'price',
-                        type: 'decimal',
-                        precision: 10,
-                        scale: 2,
+                        name: 'password',
+                        type: 'varchar'
                     },
                     {
-                        name: 'quantity',
-                        type: 'int',
+                        name: 'avatar',
+                        type: 'varchar',
+                        isNullable: true
                     },
                     {
                         name: 'created_at',
@@ -37,12 +41,13 @@ export class CreateProducts1615167813892 implements MigrationInterface {
                         type: 'timestamp',
                         default: 'now()',
                     },
-                ],
-            }),
-        );
+
+                ]
+            })
+        )
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropTable('products');
+        await queryRunner.dropTable('users')
     }
 }
