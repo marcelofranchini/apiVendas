@@ -1,0 +1,22 @@
+{
+    "type": "postgres",
+    "host": "motty.db.elephantsql.com",
+    "url": "postgres://nsdqfqje:p4I74281VDJoV4joytCf4riuglKIH5pZ@motty.db.elephantsql.com/nsdqfqje",
+    "port": 5432,
+    "username": "nsdqfqje",
+    "password": "p4I74281VDJoV4joytCf4riuglKIH5pZ",
+    "database": "nsdqfqje",
+    "keepConnectionAlive": true,
+    "logging": false,
+    "synchronize": true,
+    "migrations": [
+        "src/shared/typeorm/migrations/*.ts"
+    ],
+    "entities": [
+        "src/modules/**/typeorm/entities/*.ts"
+    ],
+    "cli": {
+        "migrationsDir": "./src/shared/typeorm/migrations",
+        "entitiesDir": "src/modules/**/typeorm/entities"
+    }
+}
