@@ -28,8 +28,6 @@ class SendForgotPasswordEmailService {
             'forgot_password.hbs',
         );
 
-        //console.log(token);
-
         await EtherealMail.sendMail({
             to: {
                 name: user.name,

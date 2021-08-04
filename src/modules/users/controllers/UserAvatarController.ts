@@ -9,7 +9,8 @@ export default class UserAvatarController {
     ): Promise<Response> {
         const updateAvatar = new UpdateUserAvatarService();
 
-        const user = updateAvatar.execute({
+        // @ts-ignore
+        const user = await updateAvatar.execute({
             user_id: request.user.id,
             // @ts-ignore
             avatarFilename: request.file.filename,
