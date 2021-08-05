@@ -7,5 +7,7 @@ temp/
 coverage
 dist
 
+aws.txt
+
 uploads/*
 !uploads/.gitkeep
