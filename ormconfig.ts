@@ -1,35 +1,13 @@
-module.exports = [
-    {
-        name: 'default',
-        type: 'postgres',
-        host: process.env.DB_HOST,
-        port: 5432,
-        username: process.env.DB_USERNAME,
-        password: process.env.DB_PASSWORD,
-        database: process.env.DB_DATABASE,
-        migrations: ['src/shared/typeorm/migrations/*.ts'],
-        entities: ['src/modules/**/typeorm/entities/*.ts'],
-        cli: {
-            migrationsDir: './src/shared/typeorm/migrations',
-        },
+module.exports = {
+    type: 'postgres',
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    username: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE,
+    migrations: ['dist/shared/typeorm/migrations/*.js'],
+    entities: ['dist/modules/**/typeorm/entities/*.js'],
+    cli: {
+        migrationsDir: './dist/shared/typeorm/migrations',
     },
-    {
-        name: 'test',
-        type: 'postgres',
-        host: process.env.APP_HOST,
-        url: process.env.APP_URL,
-        port: 5432,
-        username: process.env.APP_DATABASE,
-        password: process.env.APP_PASSWOR,
-        database: process.env.APP_DATABASE,
-        keepConnectionAlive: true,
-        logging: false,
-        synchronize: true,
-        migrations: ['src/shared/typeorm/migrations/*.ts'],
-        entities: ['src/modules/**/typeorm/entities/*.ts'],
-        cli: {
-            migrationsDir: './src/shared/typeorm/migrations',
-            entitiesDir: 'src/modules/**/typeorm/entities',
-        },
-    },
-];
+};
