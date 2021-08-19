@@ -8,14 +8,14 @@ Servidor Linux DigitalOcean
 - Testar via insomnia ou postamn.
 
   Criar Usuário:\
-  https://apivendas.marcelofranchini.tech/users\
-  Post\
-  Body\
-{\
+  https://apivendas.marcelofranchini.tech/users \
+  Post \
+  Body \
+{ \
 	"name": "",\
 	"email": "",\
 	"password": ""\
-}\
+} \
 
 
 Realizar login para obter token a ser utilizado nas demais rotas:\
