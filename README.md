@@ -5,22 +5,23 @@ Servidor Linux DigitalOcean
 
 # Produção em servidor linux. (Documentação Swagger em andamento)
 
-##Testar via insomnia ou postamn.
+- Testar via insomnia ou postamn.
 
-- Criar Usuário:
-- https://apivendas.marcelofranchini.tech/users
-- Post
-- Body
+  Criar Usuário:
+  https://apivendas.marcelofranchini.tech/users
+  Post
+  Body
 {
 	"name": "",
 	"email": "",
 	"password": ""	
 }
 
-- Realizar login para obter token a ser utilizado nas demais rotas:
-- https://apivendas.marcelofranchini.tech/sessions
-- Post
-- Body
+
+Realizar login para obter token a ser utilizado nas demais rotas:
+https://apivendas.marcelofranchini.tech/sessions
+Post
+Body
 {
 	"email": "",
 	"password": ""	
